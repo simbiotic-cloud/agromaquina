@@ -18,8 +18,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "AgroMàquina - Maquinaria Agrícola | Venta y Alquiler",
-    template: "%s | AgroMàquina",
+    default: "Agromaquina - Maquinaria Agrícola | Venta y Alquiler",
+    template: "%s | Agromaquina",
   },
   description:
     "Tu referente en maquinaria agrícola. Venta y alquiler de tractores, cosechadoras, aperos y más. Maquinaria nueva y de segunda mano. Blog con comparativas y reseñas.",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    siteName: "AgroMàquina",
-    title: "AgroMàquina - Maquinaria Agrícola | Venta y Alquiler",
+    siteName: "Agromaquina",
+    title: "Agromaquina - Maquinaria Agrícola | Venta y Alquiler",
     description:
       "Venta y alquiler de maquinaria agrícola. Tractores, cosechadoras, aperos. Nueva y segunda mano.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AgroMàquina - Maquinaria Agrícola",
+    title: "Agromaquina - Maquinaria Agrícola",
     description:
       "Venta y alquiler de maquinaria agrícola. Tractores, cosechadoras, aperos.",
   },

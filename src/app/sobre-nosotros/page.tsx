@@ -1,11 +1,12 @@
 import { Tractor, Target, Heart, Users, Award, ArrowRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "Sobre Nosotros",
-  description: "Conoce AgroMàquina. Más de 15 años de experiencia en venta y alquiler de maquinaria agrícola en Lleida y toda España.",
+  description: "Conoce Agromaquina. Más de 15 años de experiencia en venta y alquiler de maquinaria agrícola en Lleida y toda España.",
   alternates: { canonical: "/sobre-nosotros" },
 };
 
@@ -42,7 +43,7 @@ export default function SobreNosotrosPage() {
             </h2>
             <div className="space-y-4 text-warm-600 leading-relaxed">
               <p>
-                AgroMàquina nació en la comarca del Segrià con una idea clara: acercar la mejor
+                Agromaquina nació en la comarca del Segrià con una idea clara: acercar la mejor
                 maquinaria agrícola a los profesionales del campo con un servicio honesto, cercano y profesional.
               </p>
               <p>
@@ -56,8 +57,8 @@ export default function SobreNosotrosPage() {
               </p>
             </div>
           </div>
-          <div className="aspect-square bg-warm-200 rounded-2xl flex items-center justify-center">
-            <Tractor size={100} className="text-warm-300" />
+          <div className="aspect-square bg-warm-200 rounded-2xl relative overflow-hidden">
+            <Image src="/images/about/team.jpg" alt="Equipo Agromaquina" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </section>
@@ -126,7 +127,7 @@ export default function SobreNosotrosPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-6 font-[family-name:var(--font-display)]">
-                ¿Por qué elegir AgroMàquina?
+                ¿Por qué elegir Agromaquina?
               </h2>
               <ul className="space-y-4">
                 {[
@@ -144,8 +145,8 @@ export default function SobreNosotrosPage() {
                 ))}
               </ul>
             </div>
-            <div className="aspect-[4/3] bg-warm-800 rounded-2xl flex items-center justify-center">
-              <Tractor size={80} className="text-warm-600" />
+            <div className="aspect-[4/3] bg-warm-800 rounded-2xl relative overflow-hidden">
+              <Image src="/images/about/workshop.jpg" alt="Taller de Agromaquina" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
           </div>
         </div>

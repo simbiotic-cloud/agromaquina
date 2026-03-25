@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Contacto",
-  description: "Contacta con AgroMàquina. Te asesoramos sin compromiso sobre maquinaria agrícola. Venta y alquiler en toda España.",
+  description: "Contacta con Agromaquina. Te asesoramos sin compromiso sobre maquinaria agrícola. Venta y alquiler en toda España.",
   alternates: { canonical: "/contacto" },
 };
 

@@ -50,7 +50,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     excerpt: "Artículo sobre maquinaria agrícola.",
     content: "",
     image: "",
-    author: "Equipo AgroMàquina",
+    author: "Equipo Agromaquina",
     date: "2026-03-01",
     category: "guia" as const,
     tags: ["maquinaria"],
@@ -151,7 +151,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <p className="text-warm-600 leading-relaxed">
             Después de analizar todas las opciones, nuestra recomendación es clara: invierte en calidad,
             busca una máquina que se adapte a tus necesidades específicas y no dudes en pedir asesoramiento
-            profesional. En AgroMàquina estamos para ayudarte.
+            profesional. En Agromaquina estamos para ayudarte.
           </p>
 
           <p className="text-warm-600 leading-relaxed mt-6">

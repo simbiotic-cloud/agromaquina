@@ -1,7 +1,7 @@
 import type { Category, Machine, BlogPost } from "./data";
 
 const BASE_URL = "https://agromaquina.cat";
-const ORG_NAME = "AgroMàquina";
+const ORG_NAME = "Agromaquina";
 const ORG_LOGO = `${BASE_URL}/images/logo.png`;
 
 // Organization schema - used site-wide
@@ -176,7 +176,7 @@ export function productSchema(machine: Machine, categoryName: string) {
         name: "Cliente Verificado",
       },
       reviewBody:
-        "Excelente máquina, muy buen servicio de AgroMàquina. Recomendable.",
+        "Excelente máquina, muy buen servicio de Agromaquina. Recomendable.",
     },
   };
 
@@ -271,7 +271,7 @@ export function blogListingSchema(posts: BlogPost[]) {
   return {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Blog AgroMàquina",
+    name: "Blog Agromaquina",
     description:
       "Comparativas, reseñas y guías sobre maquinaria agrícola.",
     url: `${BASE_URL}/blog`,
@@ -316,7 +316,7 @@ export function catalogSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "OfferCatalog",
-    name: "Catálogo de Maquinaria Agrícola - AgroMàquina",
+    name: "Catálogo de Maquinaria Agrícola - Agromaquina",
     description:
       "Más de 500 máquinas disponibles para venta y alquiler. Maquinaria nueva y de segunda mano.",
     url: `${BASE_URL}/maquinaria`,

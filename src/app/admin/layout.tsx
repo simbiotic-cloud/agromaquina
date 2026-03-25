@@ -48,7 +48,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Tractor size={18} className="text-white" />
         </div>
         <div className="leading-tight">
-          <span className="text-sm font-bold text-white">AgroMàquina</span>
+          <span className="text-sm font-bold text-white">Agromaquina</span>
           <span className="block text-[10px] text-warm-500">Panel Admin</span>
         </div>
       </div>

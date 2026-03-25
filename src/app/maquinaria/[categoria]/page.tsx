@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ categoria
     description: cat.description,
     alternates: { canonical: `/maquinaria/${cat.slug}` },
     openGraph: {
-      title: `${cat.name} | AgroMàquina`,
+      title: `${cat.name} | Agromaquina`,
       description: cat.description,
     },
   };

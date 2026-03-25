@@ -131,7 +131,7 @@ export default function Page() {
 
           <div className="bg-accent/5 border-l-4 border-accent rounded-r-2xl p-6">
             <p className="text-warm-700 font-medium italic">
-              &ldquo;En AgroMàquina te ayudamos a calcular la rentabilidad real de cada apero.
+              &ldquo;En Agromaquina te ayudamos a calcular la rentabilidad real de cada apero.
               No vendemos máquinas, encontramos soluciones.&rdquo;
             </p>
           </div>

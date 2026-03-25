@@ -50,10 +50,10 @@ export default function Navbar() {
           </div>
           <div className="leading-tight">
             <span className="text-lg font-bold tracking-tight font-[var(--font-display)]">
-              AgroMàquina
+              Agromaquina
             </span>
             <span className="hidden sm:block text-[10px] text-warm-400 uppercase tracking-widest">
-              Maquinària Agrícola
+              Maquinaria Agricola
             </span>
           </div>
         </Link>

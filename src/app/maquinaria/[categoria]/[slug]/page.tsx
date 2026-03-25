@@ -19,7 +19,7 @@ import { productSchema, breadcrumbSchema } from "@/lib/schema";
 export async function generateMetadata({ params }: { params: Promise<{ categoria: string; slug: string }> }) {
   const { categoria, slug } = await params;
   const machine = featuredMachines.find((m) => m.slug === slug);
-  if (!machine) return { title: "Máquina | AgroMàquina" };
+  if (!machine) return { title: "Máquina | Agromaquina" };
   return {
     title: `${machine.name} - ${machine.brand} | Comprar / Alquilar`,
     description: machine.description,

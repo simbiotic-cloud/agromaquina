@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Tractor, Mail, Phone, MapPin } from "lucide-react";
+import { Tractor, Mail, Phone, MapPin, Star } from "lucide-react";
 import { categories } from "@/lib/data";
 import NewsletterForm from "@/components/NewsletterForm";
 
@@ -14,12 +14,21 @@ export default function Footer() {
               <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center">
                 <Tractor size={22} className="text-white" />
               </div>
-              <span className="text-lg font-bold text-white tracking-tight">AgroMàquina</span>
+              <span className="text-lg font-bold text-white tracking-tight">Agromaquina</span>
             </Link>
-            <p className="text-sm leading-relaxed mb-6">
+            <p className="text-sm leading-relaxed mb-4">
               Tu referente en maquinaria agrícola. Venta, alquiler y asesoramiento
               profesional para el campo.
             </p>
+            {/* Google rating */}
+            <div className="flex items-center gap-2 mb-6 bg-white/5 px-3 py-2 rounded-lg w-fit">
+              <div className="flex">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} size={14} className={i <= 4 ? "text-[#fbbf24] fill-[#fbbf24]" : "text-[#fbbf24]/60 fill-[#fbbf24]/60"} />
+                ))}
+              </div>
+              <span className="text-xs text-warm-300"><strong className="text-white">4,8</strong>/5 en Google</span>
+            </div>
             <div className="flex flex-col gap-2 text-sm">
               <a href="tel:+34973000000" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Phone size={14} /> 973 XX XX XX
@@ -82,7 +91,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center text-xs text-warm-500">
-          <span>&copy; {new Date().getFullYear()} AgroMàquina. Tots els drets reservats.</span>
+          <span>&copy; {new Date().getFullYear()} Agromaquina. Tots els drets reservats.</span>
           <div className="flex gap-4 mt-2 sm:mt-0">
             <Link href="#" className="hover:text-accent transition-colors">Aviso Legal</Link>
             <Link href="#" className="hover:text-accent transition-colors">Privacidad</Link>

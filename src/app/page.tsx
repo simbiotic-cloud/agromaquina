@@ -21,11 +21,17 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="relative bg-primary min-h-[600px] flex items-center overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }} />
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero/hero-main.jpg"
+            alt="Maquinaria agrícola en el campo"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center">
@@ -37,7 +43,7 @@ export default function Home() {
               La maquinaria que tu
               <span className="text-accent"> campo necesita</span>
             </h1>
-            <p className="text-warm-400 text-lg md:text-xl max-w-lg mb-8 leading-relaxed">
+            <p className="text-warm-300 text-lg md:text-xl max-w-lg mb-8 leading-relaxed">
               Venta y alquiler de maquinaria agrícola. Nueva y de segunda mano.
               Encuentra tractores, cosechadoras, aperos y mucho más.
             </p>
@@ -56,36 +62,58 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Stats */}
-            <div className="flex gap-8 mt-12">
-              {[
-                { value: "500+", label: "Máquinas" },
-                { value: "50+", label: "Marcas" },
-                { value: "15 años", label: "Experiencia" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-warm-500 uppercase tracking-wider">{stat.label}</div>
+            {/* Rating + Stats */}
+            <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6">
+              {/* Trustpilot-style rating */}
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-3 rounded-xl">
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star
+                      key={i}
+                      size={18}
+                      className={i <= 4 ? "text-[#fbbf24] fill-[#fbbf24]" : "text-[#fbbf24]/60 fill-[#fbbf24]/60"}
+                    />
+                  ))}
                 </div>
-              ))}
+                <div>
+                  <div className="text-white text-sm font-bold">4,8 <span className="font-normal text-warm-400">/ 5</span></div>
+                  <div className="text-[11px] text-warm-400">+230 opiniones en Google</div>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                {[
+                  { value: "500+", label: "Máquinas" },
+                  { value: "50+", label: "Marcas" },
+                  { value: "15 años", label: "Experiencia" },
+                ].map((stat) => (
+                  <div key={stat.label}>
+                    <div className="text-xl font-bold text-white">{stat.value}</div>
+                    <div className="text-[10px] text-warm-500 uppercase tracking-wider">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Hero visual - abstract machinery shape */}
-          <div className="hidden lg:flex justify-center">
-            <div className="relative w-[450px] h-[450px]">
-              <div className="absolute inset-0 bg-accent/10 rounded-[3rem] rotate-6" />
-              <div className="absolute inset-4 bg-accent/20 rounded-[2.5rem] -rotate-3" />
-              <div className="absolute inset-8 bg-warm-800 rounded-[2rem] flex items-center justify-center">
-                <Tractor size={120} className="text-accent/60" />
-              </div>
-              {/* Floating badges */}
-              <div className="absolute -top-4 -right-4 bg-white text-primary px-4 py-2 rounded-xl shadow-xl text-sm font-semibold">
-                Envío a toda España
-              </div>
-              <div className="absolute -bottom-2 -left-4 bg-secondary text-white px-4 py-2 rounded-xl shadow-xl text-sm font-semibold">
-                Garantía incluida
-              </div>
+          {/* Hero image */}
+          <div className="hidden lg:block relative">
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/hero/hero-side.jpg"
+                alt="Tractor moderno en campo agrícola"
+                fill
+                className="object-cover"
+                priority
+                sizes="50vw"
+              />
+            </div>
+            {/* Floating badges */}
+            <div className="absolute -top-4 -right-4 bg-white text-primary px-4 py-2.5 rounded-xl shadow-xl text-sm font-semibold flex items-center gap-2">
+              <ShieldCheck size={16} className="text-accent" /> Envío a toda España
+            </div>
+            <div className="absolute -bottom-4 -left-4 bg-secondary text-white px-4 py-2.5 rounded-xl shadow-xl text-sm font-semibold">
+              Garantía incluida
             </div>
           </div>
         </div>

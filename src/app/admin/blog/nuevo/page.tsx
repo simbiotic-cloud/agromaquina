@@ -136,7 +136,7 @@ export default function NuevoArticuloPage() {
           <div className="bg-white rounded-2xl border border-warm-200 p-6">
             <h2 className="text-lg font-bold text-primary mb-4">Autor</h2>
             <select className="w-full bg-warm-50 border border-warm-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent">
-              <option>Equipo AgroMàquina</option>
+              <option>Equipo Agromaquina</option>
               <option>Admin</option>
             </select>
           </div>
