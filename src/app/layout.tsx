@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema, webSiteSchema } from "@/lib/schema";
+import Script from "next/script";
+import Analytics from "@/components/Analytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,9 +25,15 @@ export const metadata: Metadata = {
   },
   description:
     "Tu referente en maquinaria agrícola. Venta y alquiler de tractores, cosechadoras, aperos y más. Maquinaria nueva y de segunda mano. Blog con comparativas y reseñas.",
-  metadataBase: new URL("https://agromaquina.cat"),
+  metadataBase: new URL("https://agromaquina.net"),
   alternates: {
     canonical: "/",
+  },
+  verification: {
+    google: "agromaquina-google-verification-code",
+    other: {
+      "msvalidate.01": "agromaquina-bing-verification-code",
+    },
   },
   openGraph: {
     type: "website",
@@ -61,7 +69,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className="min-h-full flex flex-col">
+        <Analytics />
         <JsonLd data={organizationSchema()} />
         <JsonLd data={webSiteSchema()} />
         <Navbar />

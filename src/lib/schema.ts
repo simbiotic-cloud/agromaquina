@@ -36,7 +36,7 @@ export function localBusinessSchema() {
     logo: ORG_LOGO,
     image: ORG_LOGO,
     telephone: "+34-973-000000",
-    email: "info@agromaquina.cat",
+    email: "info@agromaquina.net",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Lleida",

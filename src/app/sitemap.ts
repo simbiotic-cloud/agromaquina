@@ -1,68 +1,56 @@
-import type { MetadataRoute } from "next";
-import { categories, featuredMachines, blogPosts } from "@/lib/data";
-
-const BASE_URL = "https://agromaquina.cat";
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString();
-
-  // Static pages
-  const staticPages: MetadataRoute.Sitemap = [
+  const baseUrl = 'https://agromaquina.net';
+  
+  return [
     {
-      url: BASE_URL,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 1.0,
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
     },
     {
-      url: `${BASE_URL}/maquinaria`,
-      lastModified: now,
-      changeFrequency: "daily",
+      url: `${baseUrl}/maquinaria`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/blog`,
-      lastModified: now,
-      changeFrequency: "daily",
+      url: `${baseUrl}/marcas`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/sobre-nosotros`,
-      lastModified: now,
-      changeFrequency: "monthly",
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/contacto`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/sobre-nosotros`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/privacidad`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${BASE_URL}/contacto`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
+      url: `${baseUrl}/terminos`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
   ];
-
-  // Category pages
-  const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
-    url: `${BASE_URL}/maquinaria/${cat.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
-  // Product pages
-  const productPages: MetadataRoute.Sitemap = featuredMachines.map((machine) => ({
-    url: `${BASE_URL}/maquinaria/${machine.category}/${machine.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
-  }));
-
-  // Blog posts
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: post.date,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  return [...staticPages, ...categoryPages, ...productPages, ...blogPages];
 }

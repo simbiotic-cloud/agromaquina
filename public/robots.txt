@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /*.json$
+
+Sitemap: https://agromaquina.net/sitemap.xml
+Host: https://agromaquina.net

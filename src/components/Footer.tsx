@@ -30,14 +30,14 @@ export default function Footer() {
               <span className="text-xs text-warm-300"><strong className="text-white">4,8</strong>/5 en Google</span>
             </div>
             <div className="flex flex-col gap-2 text-sm">
-              <a href="tel:+34973000000" className="flex items-center gap-2 hover:text-accent transition-colors">
-                <Phone size={14} /> 973 XX XX XX
+              <a href="tel:+34602441151" className="flex items-center gap-2 hover:text-accent transition-colors">
+                <Phone size={14} /> +34 602 441 151
               </a>
-              <a href="mailto:info@agromaquina.cat" className="flex items-center gap-2 hover:text-accent transition-colors">
-                <Mail size={14} /> info@agromaquina.cat
+              <a href="mailto:info@agromaquina.net" className="flex items-center gap-2 hover:text-accent transition-colors">
+                <Mail size={14} /> info@agromaquina.net
               </a>
               <span className="flex items-center gap-2">
-                <MapPin size={14} /> Lleida, Catalunya
+                <MapPin size={14} /> Vilafranca del Penedès, Catalunya
               </span>
             </div>
           </div>

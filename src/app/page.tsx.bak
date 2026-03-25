@@ -1,16 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
+  Tractor,
   ArrowRight,
   Star,
   ShieldCheck,
+  Wrench,
   TrendingUp,
   Clock,
   Tag,
-  Tractor,
-  Zap,
-  Package,
-  Heart,
 } from "lucide-react";
 import { categories, featuredMachines, blogPosts, brands } from "@/lib/data";
 
@@ -19,15 +17,6 @@ function formatPrice(price: number) {
 }
 
 export default function Home() {
-  // Get first 12 categories (excluding "Ver Todas" which is last)
-  const mainCategories = categories.slice(0, 12);
-
-  // Get featured machines for carousel
-  const featured = featuredMachines.slice(0, 8);
-
-  // Get first 6 brands
-  const mainBrands = brands.slice(0, 6);
-
   return (
     <>
       {/* HERO */}
@@ -35,7 +24,7 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1400&h=800&fit=crop"
+            src="/images/hero/hero-main.jpg"
             alt="Maquinaria agrícola en el campo"
             fill
             className="object-cover"
@@ -75,6 +64,7 @@ export default function Home() {
 
             {/* Rating + Stats */}
             <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6">
+              {/* Trustpilot-style rating */}
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-3 rounded-xl">
                 <div className="flex">
                   {[1, 2, 3, 4, 5].map((i) => (
@@ -94,7 +84,7 @@ export default function Home() {
               <div className="flex gap-6">
                 {[
                   { value: "500+", label: "Máquinas" },
-                  { value: "16", label: "Marcas" },
+                  { value: "50+", label: "Marcas" },
                   { value: "15 años", label: "Experiencia" },
                 ].map((stat) => (
                   <div key={stat.label}>
@@ -110,14 +100,15 @@ export default function Home() {
           <div className="hidden lg:block relative">
             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1625246333195-78d9c38ad576?w=800&h=600&fit=crop"
-                alt="Maquinaria agrícola moderna"
+                src="/images/hero/hero-side.jpg"
+                alt="Tractor moderno en campo agrícola"
                 fill
                 className="object-cover"
                 priority
                 sizes="50vw"
               />
             </div>
+            {/* Floating badges */}
             <div className="absolute -top-4 -right-4 bg-white text-primary px-4 py-2.5 rounded-xl shadow-xl text-sm font-semibold flex items-center gap-2">
               <ShieldCheck size={16} className="text-accent" /> Envío a toda España
             </div>
@@ -133,7 +124,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-wrap justify-center gap-8 md:gap-16">
           {[
             { icon: ShieldCheck, text: "Garantía en todas las máquinas" },
-            { icon: Zap, text: "Asesoramiento Especializado" },
+            { icon: Wrench, text: "Asesoramiento Especializado" },
             { icon: TrendingUp, text: "Financiación a medida" },
             { icon: Clock, text: "Entrega en 24-72h" },
           ].map(({ icon: Icon, text }) => (
@@ -145,23 +136,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CATEGORIES GRID - 12 Categories */}
+      {/* CATEGORIES GRID */}
       <section className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3 font-[family-name:var(--font-display)]">
-            Categorías Principales
+            Explora por Categoría
           </h2>
           <p className="text-warm-500 max-w-2xl mx-auto">
-            Encuentra la maquinaria agrícola que necesitas en nuestro amplio catálogo.
+            Encuentra la maquinaria perfecta para cada tarea. Desde tractores hasta herramientas de poda.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-          {mainCategories.map((cat) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {categories.map((cat) => (
             <Link
               key={cat.slug}
               href={`/maquinaria/${cat.slug}`}
-              className="category-card group relative bg-white rounded-2xl border border-warm-200 p-6 hover:border-accent/30 overflow-hidden transition-all"
+              className="category-card group relative bg-white rounded-2xl border border-warm-200 p-6 hover:border-accent/30 overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-[4rem] group-hover:bg-accent/10 transition-colors" />
               <div className="relative">
@@ -174,18 +165,9 @@ export default function Home() {
             </Link>
           ))}
         </div>
-
-        <div className="text-center">
-          <Link
-            href="/maquinaria"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-xl transition-colors"
-          >
-            Ver Catálogo Completo <ArrowRight size={18} />
-          </Link>
-        </div>
       </section>
 
-      {/* FEATURED MACHINES CAROUSEL - 8 Items, 4 Visible */}
+      {/* FEATURED MACHINES */}
       <section className="bg-warm-100">
         <div className="max-w-7xl mx-auto px-4 py-20">
           <div className="flex justify-between items-end mb-12">
@@ -195,121 +177,75 @@ export default function Home() {
               </h2>
               <p className="text-warm-500">Selección curada de las mejores oportunidades del momento.</p>
             </div>
+            <Link
+              href="/maquinaria"
+              className="hidden md:flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all"
+            >
+              Ver todo <ArrowRight size={16} />
+            </Link>
           </div>
 
-          {/* Carousel Container */}
-          <div className="overflow-x-auto pb-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 min-w-min lg:min-w-full">
-              {featured.map((machine) => (
-                <Link
-                  key={machine.slug}
-                  href={`/maquinaria/${machine.category}/${machine.slug}`}
-                  className="category-card group bg-white rounded-2xl overflow-hidden border border-warm-200 flex-shrink-0 w-full sm:w-80 lg:w-auto transition-all hover:shadow-xl"
-                >
-                  {/* Image */}
-                  <div className="aspect-[4/3] bg-warm-200 relative overflow-hidden">
-                    <Image
-                      src={machine.image}
-                      alt={machine.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 25vw"
-                    />
-                    {/* Badges */}
-                    <div className="absolute top-3 left-3 flex gap-2">
-                      <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                        machine.condition === "nueva" ? "bg-accent/90 text-white" : "bg-warm-500 text-white"
-                      }`}>
-                        {machine.condition === "nueva" ? "Nueva" : "2ª Mano"}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredMachines.map((machine) => (
+              <Link
+                key={machine.slug}
+                href={`/maquinaria/${machine.category}/${machine.slug}`}
+                className="category-card group bg-white rounded-2xl overflow-hidden border border-warm-200"
+              >
+                {/* Image */}
+                <div className="aspect-[4/3] bg-warm-200 relative overflow-hidden">
+                  <Image
+                    src={machine.image}
+                    alt={machine.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                  {/* Badges */}
+                  <div className="absolute top-3 left-3 flex gap-2">
+                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
+                      machine.condition === "nueva" ? "badge-new" : "badge-used"
+                    }`}>
+                      {machine.condition === "nueva" ? "Nueva" : "2ª Mano"}
+                    </span>
+                    {machine.rentalPrice && (
+                      <span className="badge-rental text-xs font-semibold px-2.5 py-1 rounded-full">
+                        Alquiler
                       </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="p-5">
+                  <div className="text-xs text-warm-500 uppercase tracking-wider mb-1">{machine.brand}</div>
+                  <h3 className="font-semibold text-primary group-hover:text-accent transition-colors mb-2">
+                    {machine.name}
+                  </h3>
+                  <p className="text-sm text-warm-500 mb-4 line-clamp-2">{machine.description}</p>
+
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <div className="text-xl font-bold text-primary">{formatPrice(machine.price)}</div>
                       {machine.rentalPrice && (
-                        <span className="bg-secondary/90 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
-                          Alquiler
-                        </span>
+                        <div className="text-xs text-secondary font-medium">
+                          Alquiler desde {formatPrice(machine.rentalPrice)}/día
+                        </div>
                       )}
                     </div>
-                  </div>
-
-                  <div className="p-5">
-                    <div className="text-xs text-warm-500 uppercase tracking-wider mb-1">{machine.brand}</div>
-                    <h3 className="font-semibold text-primary group-hover:text-accent transition-colors mb-2 line-clamp-2">
-                      {machine.name}
-                    </h3>
-                    <p className="text-sm text-warm-500 mb-4 line-clamp-2">{machine.description}</p>
-
-                    <div className="flex items-end justify-between">
-                      <div>
-                        <div className="text-xl font-bold text-primary">{formatPrice(machine.price)}</div>
-                        {machine.rentalPrice && (
-                          <div className="text-xs text-secondary font-medium">
-                            {formatPrice(machine.rentalPrice)}/día
-                          </div>
-                        )}
-                      </div>
-                      <div className="w-8 h-8 bg-warm-100 rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-colors">
-                        <ArrowRight size={14} />
-                      </div>
+                    <div className="w-8 h-8 bg-warm-100 rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-colors">
+                      <ArrowRight size={14} />
                     </div>
                   </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* BRANDS SECTION - 6 Symbols */}
-      <section className="max-w-7xl mx-auto px-4 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3 font-[family-name:var(--font-display)]">
-            Explora Por Marca
-          </h2>
-          <p className="text-warm-500 max-w-2xl mx-auto">
-            Todas las marcas líderes en maquinaria agrícola
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
-          {mainBrands.map((brand) => (
-            <Link
-              key={brand.slug}
-              href={`/marcas/${brand.slug}`}
-              className="group relative bg-white rounded-2xl border border-warm-200 p-8 flex items-center justify-center min-h-[140px] hover:border-accent/30 hover:shadow-lg transition-all"
-            >
-              <div className="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-bl-3xl group-hover:bg-accent/10 transition-colors" />
-              <div className="relative text-center">
-                <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">
-                  {brand.name === "John Deere" && "🌾"}
-                  {brand.name === "CLAAS" && "🚜"}
-                  {brand.name === "New Holland" && "🔧"}
-                  {brand.name === "Kubota" && "⚙️"}
-                  {brand.name === "Fendt" && "🏆"}
-                  {brand.name === "Massey Ferguson" && "🎯"}
-                  {brand.name === "Case IH" && "💪"}
-                  {brand.name === "Deutz-Fahr" && "🇩🇪"}
-                  {brand.name === "Amazone" && "🎨"}
-                  {brand.name === "Kuhn" && "🌱"}
-                  {brand.name === "Lemken" && "⭐"}
-                  {brand.name === "Same" && "🇮🇹"}
-                  {brand.name === "Landini" && "🏅"}
-                  {brand.name === "Valtra" && "🔨"}
-                  {brand.name === "McCormick" && "🌟"}
-                  {brand.name === "Kverneland" && "🇳🇴"}
                 </div>
-                <h3 className="font-semibold text-primary text-sm group-hover:text-accent transition-colors">
-                  {brand.name}
-                </h3>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
 
-        <div className="text-center">
           <Link
-            href="/marcas"
-            className="inline-flex items-center gap-2 bg-primary/10 text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3 rounded-xl transition-all"
+            href="/maquinaria"
+            className="md:hidden flex items-center justify-center gap-1 text-accent font-semibold text-sm mt-8 hover:gap-2 transition-all"
           >
-            Ver Todas las Marcas <ArrowRight size={18} />
+            Ver todo el catálogo <ArrowRight size={16} />
           </Link>
         </div>
       </section>
@@ -353,7 +289,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BLOG PREVIEW - 4 Articles Only */}
+      {/* BLOG PREVIEW */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 py-20">
           <div className="flex justify-between items-end mb-12">
@@ -372,7 +308,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {blogPosts.slice(0, 4).map((post) => (
+            {blogPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
@@ -401,22 +337,50 @@ export default function Home() {
                   </span>
                   <span className="text-xs text-warm-400">{post.readTime} min</span>
                 </div>
-                <h3 className="font-semibold text-primary group-hover:text-accent transition-colors text-sm leading-snug mb-2 line-clamp-2">
+                <h3 className="font-semibold text-primary group-hover:text-accent transition-colors text-sm leading-snug mb-2">
                   {post.title}
                 </h3>
                 <p className="text-xs text-warm-500 line-clamp-2">{post.excerpt}</p>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="flex justify-center mt-8 md:hidden">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all"
-            >
-              Ver blog completo <ArrowRight size={16} />
-            </Link>
+      {/* BRANDS */}
+      <section className="border-t border-warm-200">
+        <div className="max-w-7xl mx-auto px-4 py-16">
+          <h3 className="text-center text-sm uppercase tracking-widest text-warm-400 mb-8">
+            Trabajamos con las mejores marcas
+          </h3>
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            {brands.map((brand) => (
+              <div
+                key={brand}
+                className="text-warm-400 hover:text-primary font-semibold text-sm transition-colors cursor-default"
+              >
+                {brand}
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="bg-accent">
+        <div className="max-w-4xl mx-auto px-4 py-16 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-[family-name:var(--font-display)]">
+            ¿No encuentras lo que buscas?
+          </h2>
+          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+            Cuéntanos qué necesitas y te ayudaremos a encontrar la máquina perfecta para tu explotación.
+          </p>
+          <Link
+            href="/contacto"
+            className="inline-flex items-center gap-2 bg-white text-accent font-bold px-8 py-4 rounded-xl hover:bg-warm-50 transition-colors shadow-lg"
+          >
+            Contacta con nosotros <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
     </>

@@ -36,8 +36,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <span>Venta y Alquiler de Maquinaria Agrícola</span>
           <div className="hidden sm:flex gap-4">
-            <span>Tel: 973 XX XX XX</span>
-            <span>info@agromaquina.cat</span>
+            <span>Tel: +34 602 441 151 (Albert)</span>
+            <span>info@agromaquina.net</span>
           </div>
         </div>
       </div>

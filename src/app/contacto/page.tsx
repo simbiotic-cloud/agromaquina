@@ -45,22 +45,23 @@ export default function ContactoPage() {
                 Contacto Directo
               </h3>
               <div className="space-y-5">
-                <a href="tel:+34973000000" className="flex items-start gap-3 group">
+                <a href="tel:+34602441151" className="flex items-start gap-3 group">
                   <div className="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center shrink-0">
                     <Phone size={18} className="text-accent" />
                   </div>
                   <div>
                     <div className="text-sm text-warm-400">Teléfono</div>
-                    <div className="font-semibold group-hover:text-accent transition-colors">973 XX XX XX</div>
+                    <div className="font-semibold group-hover:text-accent transition-colors">+34 602 441 151</div>
+                    <div className="text-xs text-warm-400">Albert</div>
                   </div>
                 </a>
-                <a href="mailto:info@agromaquina.cat" className="flex items-start gap-3 group">
+                <a href="mailto:info@agromaquina.net" className="flex items-start gap-3 group">
                   <div className="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center shrink-0">
                     <Mail size={18} className="text-accent" />
                   </div>
                   <div>
                     <div className="text-sm text-warm-400">Email</div>
-                    <div className="font-semibold group-hover:text-accent transition-colors">info@agromaquina.cat</div>
+                    <div className="font-semibold group-hover:text-accent transition-colors">info@agromaquina.net</div>
                   </div>
                 </a>
                 <div className="flex items-start gap-3">
@@ -69,7 +70,7 @@ export default function ContactoPage() {
                   </div>
                   <div>
                     <div className="text-sm text-warm-400">Dirección</div>
-                    <div className="font-semibold">Polígon Industrial, Lleida</div>
+                    <div className="font-semibold">Vilafranca del Penedès</div>
                     <div className="text-sm text-warm-400">Catalunya, España</div>
                   </div>
                 </div>
@@ -79,8 +80,8 @@ export default function ContactoPage() {
                   </div>
                   <div>
                     <div className="text-sm text-warm-400">Horario</div>
-                    <div className="font-semibold">Lun - Vie: 8:00 - 18:00</div>
-                    <div className="text-sm text-warm-400">Sáb: 9:00 - 13:00</div>
+                    <div className="font-semibold">Lun - Vie: 8:00 - 15:00</div>
+                    <div className="text-xs text-warm-400">Consulta disponibilidad</div>
                   </div>
                 </div>
               </div>
@@ -94,7 +95,7 @@ export default function ContactoPage() {
                 Escríbenos por WhatsApp y te responderemos al momento.
               </p>
               <a
-                href="https://wa.me/34600000000"
+                href="https://wa.me/34602441151"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-white text-[#25D366] font-semibold px-6 py-3 rounded-xl hover:bg-warm-50 transition-colors text-sm"
