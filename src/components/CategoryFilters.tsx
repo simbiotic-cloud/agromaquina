@@ -236,7 +236,7 @@ export default function CategoryFilters({ categoria, machines, categoryName, mac
       <div className="flex gap-8">
         {/* Desktop sidebar */}
         <aside className="hidden lg:block w-64 shrink-0">
-          <div className="sticky top-[140px]">{filtersContent}</div>
+          <div className="sticky top-6">{filtersContent}</div>
         </aside>
 
         {/* Mobile filter button */}

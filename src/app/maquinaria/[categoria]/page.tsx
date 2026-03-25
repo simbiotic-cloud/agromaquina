@@ -42,7 +42,7 @@ function getDemoMachines(categoria: string, categoryName: string, subcategories:
     rentalPrice: rentalPrices[i] || undefined,
     condition: (i % 3 === 0 ? "segunda-mano" : "nueva") as "nueva" | "segunda-mano",
     availability: (rentalPrices[i] ? "venta-alquiler" : "venta") as "venta" | "venta-alquiler",
-    image: "",
+    image: `/images/categories/${categoria === "arados-aperos" ? "arados" : categoria === "olivar-vinedo" ? "olivar" : categoria === "generadores-compresores" ? "generadores" : categoria === "remolques-transporte" ? "remolques" : categoria}.jpg`,
     images: [],
     description: `${subcategories[i % subcategories.length]} de alta calidad para uso profesional.`,
     specs: {},

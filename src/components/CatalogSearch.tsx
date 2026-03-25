@@ -44,7 +44,7 @@ export default function CatalogSearch({ categories }: Props) {
   return (
     <>
       {/* Search & view toggle */}
-      <section className="bg-white border-b border-warm-200 sticky top-[104px] z-30">
+      <section className="bg-white border-b border-warm-200 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="relative flex-1 max-w-md w-full">
             <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-warm-400" />

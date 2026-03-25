@@ -30,7 +30,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-primary text-white">
+    <header className="relative z-50 bg-primary text-white">
       {/* Top bar */}
       <div className="bg-primary-dark text-warm-400 text-xs py-1.5">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
